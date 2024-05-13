@@ -15,7 +15,7 @@ export default function AddCountryForm() {
   const [name, setName] = useState("");
   const [emoji, setEmoji] = useState("");
   const [code, setCode] = useState("");
-  const [continentId, setContinentId] = useState("");
+  const [continentId, setContinentId] = useState<number | null>();
 
   const { loading, error, data } = useQuery(getContinents);
 
@@ -77,7 +77,7 @@ export default function AddCountryForm() {
       <select
         name="categoryId"
         onChange={(e) => {
-          setContinentId(e.target.value);
+          setContinentId(Number(e.target.value));
         }}
       >
         {continents.map((continent: ContinentType) => (
