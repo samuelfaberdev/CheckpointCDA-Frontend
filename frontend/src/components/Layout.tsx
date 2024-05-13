@@ -20,7 +20,9 @@ export default function Layout({
         <link rel="icon" href="favicon.ico" />
       </Head>
       <Header />
-      <main className="p-2 flex gap-2 justify-center">{children}</main>
+      <main className="p-2 flex flex-col gap-2 items-center justify-center">
+        {children}
+      </main>
     </>
   );
 }
