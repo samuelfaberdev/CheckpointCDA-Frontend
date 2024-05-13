@@ -1,3 +1,4 @@
+import { API_URL } from "@/graphql/config";
 import "@/styles/globals.css";
 import {
   ApolloClient,
@@ -7,7 +8,6 @@ import {
 } from "@apollo/client";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
-import { API_URL } from "../graphql/config";
 
 const link = createHttpLink({
   uri: API_URL,
