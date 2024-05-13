@@ -1,3 +1,4 @@
+import Countries from "@/components/Countries";
 import Layout from "../components/Layout";
 
 export default function Home() {
@@ -6,9 +7,7 @@ export default function Home() {
       title="Page d'accueil"
       description="Le listing des pays de l'API GraphQL"
     >
-      <h1 className="text-3xl bg-red-600 font-bold underline">
-        Hello, wilder !
-      </h1>
+      <Countries />
     </Layout>
   );
 }
