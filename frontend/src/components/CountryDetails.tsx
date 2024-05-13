@@ -9,12 +9,13 @@ export default function CountryDetails({
   continent,
 }: CountryDetailsProps) {
   return (
-    <>
-      <h2>{emoji}</h2>
+    <div className="flex flex-col gap-2 items-center">
+      <h2 className="text-8xl">{emoji}</h2>
+
       <p>
         Name: {name} ({code})
       </p>
       <p>Continent: {continent ? continent.name : "undefined"}</p>
-    </>
+    </div>
   );
 }
