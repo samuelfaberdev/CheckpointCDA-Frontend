@@ -10,7 +10,8 @@
     "codegen": "graphql-codegen --config codegen.yml --watch"
   },
   "dependencies": {
-    "@apollo/client": "^3.10.2",
+    "@apollo/client": "^3.10.3",
+    "graphql": "^16.8.1",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0"

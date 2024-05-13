@@ -1,9 +1,30 @@
 import "@/styles/globals.css";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
+import { API_URL } from "../graphql/config";
+
+const link = createHttpLink({
+  uri: API_URL,
+  credentials: "include",
+});
+
+const client = new ApolloClient({
+  link,
+  cache: new InMemoryCache(),
+});
 
 function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
 
 // Disabling SSR
