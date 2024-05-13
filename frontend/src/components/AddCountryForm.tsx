@@ -12,10 +12,12 @@ type ContinentType = {
 };
 
 export default function AddCountryForm() {
+  const router = useRouter();
+
   const [name, setName] = useState("");
   const [emoji, setEmoji] = useState("");
   const [code, setCode] = useState("");
-  const [continentId, setContinentId] = useState<number | null>();
+  const [continentId, setContinentId] = useState<number>(1);
 
   const { loading, error, data } = useQuery(getContinents);
 
@@ -28,16 +30,12 @@ export default function AddCountryForm() {
 
   const continents = data.continents;
 
-  const router = useRouter();
-
   const newCountry: CountryType = {
     name,
     emoji,
     code,
     continent: { id: Number(continentId) },
   };
-
-  console.log(newCountry);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
